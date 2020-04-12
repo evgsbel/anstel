@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
@@ -70,7 +71,12 @@ const plugins = () => {
         ]),
         new MiniCssExtractPlugin({
             filename: 'css/[name]-[hash].css'
-        })
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
     ]
     if (isProd) {
         base.push(new BundleAnalyzerPlugin())
