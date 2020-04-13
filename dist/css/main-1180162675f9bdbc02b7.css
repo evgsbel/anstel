@@ -8024,7 +8024,11 @@ button {
     font-family: "gt_eesti_pro_displaymedium";
     position: absolute;
     top: 30px;
-    left: 30px; }
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0 15px;
+    margin: 0 auto; }
 
 .confirm {
   background: #E5E5E5;
@@ -8044,7 +8048,8 @@ button {
   .confirm__text {
     margin-top: 15px;
     font-family: "gt_eesti_pro_displaylight";
-    color: #000; }
+    color: #000;
+    text-align: center; }
 
 .steps {
   background-image: url(../img/res-bg.png);
@@ -8069,8 +8074,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  overflow: hidden;
-  height: 337px; }
+  overflow: hidden; }
   .question .container {
     position: relative;
     z-index: 1;
@@ -8338,4 +8342,4 @@ button {
     -webkit-transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg); } }
 
 
-/*# sourceMappingURL=main-0405504b10a1f85c7972.css.map*/
+/*# sourceMappingURL=main-1180162675f9bdbc02b7.css.map*/

@@ -519,7 +519,6 @@ button
       position: absolute
       top: 0
       left: 0
-
   &__text
     color: #fff
     font-size: 18px
@@ -527,8 +526,12 @@ button
     font-family: $medium
     position: absolute
     top: 30px
-    left: 30px
-    
+    left: 0
+    right: 0
+    text-align: center
+    padding: 0 15px
+    margin: 0 auto
+
 //confirm
 
 .confirm
@@ -550,6 +553,7 @@ button
     margin-top: 15px
     font-family: $light
     color: #000
+    text-align: center
 
 
 // steps
@@ -575,12 +579,11 @@ button
 
 .question
   padding: 60px 0
-  background-image: url('/img/question-bg.png')
+  background-image: url('../img/question-bg.png')
   background-repeat: no-repeat
   background-size: cover
   position: relative
   overflow: hidden
-  height: 337px
   & .container
     position: relative
     z-index: 1
@@ -640,7 +643,7 @@ button
 
 .news
   padding: 60px 0
-  background-image: url('/img/res-bg.png')
+  background-image: url('../img/res-bg.png')
   background-repeat: no-repeat
   background-size: cover
   &__item
@@ -705,7 +708,7 @@ button
   &__btn
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
     &:hover:before
-      transform: skewX(-45deg) translateX(30em);
+      transform: skewX(-45deg) translateX(30em)
   &__input
     margin-bottom: 25px
     &::-webkit-input-placeholder
