@@ -7831,6 +7831,9 @@ button {
       z-index: 1;
       position: relative; }
 
+.hamburger {
+  display: none; }
+
 .banner {
   background-image: url(../img/banner.jpg);
   background-size: cover;
@@ -8335,8 +8338,10 @@ button {
     text-align: center; }
   .screen__anim-mouse {
     bottom: 0; }
-  .service__nav-link.active:after {
-    content: none; }
+  .service__nav-link {
+    font-size: 23px; }
+    .service__nav-link.active:after {
+      content: none; }
   .slider-arrow_prev {
     left: 0; }
   .slider-arrow_next {
@@ -8353,8 +8358,56 @@ button {
 @media (max-width: 991.98px) {
   .header__callback {
     margin-top: 20px; }
-  .nav {
+  .layout-menu {
+    max-width: 100%;
     display: none; }
+  .nav {
+    max-width: 100%; }
+    .nav.menu-open {
+      display: block;
+      position: absolute;
+      top: 0;
+      height: 100vh;
+      align-items: flex-start;
+      z-index: 3;
+      overflow: hidden;
+      transition: .5s all ease-in-out; }
+    .nav__wrapper {
+      flex-wrap: wrap; }
+    .nav__item {
+      width: 100%; }
+    .nav__link {
+      text-align: left; }
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    transition: .5s all ease-in-out;
+    z-index: 10; }
+    .hamburger:before, .hamburger:after {
+      position: absolute;
+      content: '';
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #5E6398;
+      width: 30px;
+      height: 3px;
+      transition: .5s all ease-in-out; }
+    .hamburger:before {
+      top: 20px; }
+    .hamburger:after {
+      bottom: 20px; }
+    .hamburger.is-active:before {
+      transform: translateX(-50%) rotate(45deg);
+      background-color: #fff;
+      top: 24px; }
+    .hamburger.is-active:after {
+      transform: translateX(-50%) rotate(-45deg);
+      background-color: #fff;
+      bottom: 23px; }
   .results .row {
     justify-content: space-around; }
   .f-nav__wrapper {
@@ -8390,4 +8443,4 @@ button {
     flex-wrap: wrap; } }
 
 
-/*# sourceMappingURL=main-5607dfa97a898ccdbe1f.css.map*/
+/*# sourceMappingURL=main-65b5e62568479036caf0.css.map*/

@@ -235,6 +235,12 @@ jquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function () {
     }
   });
 });
+jquery__WEBPACK_IMPORTED_MODULE_0__(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0__('.hamburger').on('click', function headerHambClick() {
+    jquery__WEBPACK_IMPORTED_MODULE_0__(this).toggleClass('is-active');
+    jquery__WEBPACK_IMPORTED_MODULE_0__('.layout-menu').toggleClass('menu-open').removeClass('feed-open');
+  });
+});
 
 /***/ }),
 
@@ -278,4 +284,4 @@ jquery__WEBPACK_IMPORTED_MODULE_0__(document).ready(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main-5607dfa97a898ccdbe1f.js.map
+//# sourceMappingURL=main-65b5e62568479036caf0.js.map

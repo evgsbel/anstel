@@ -58,3 +58,12 @@ $(document).ready(function () {
         }
     })
 })
+
+$(() => {
+    $('.hamburger').on('click', function headerHambClick() {
+        $(this).toggleClass('is-active')
+        $('.layout-menu')
+            .toggleClass('menu-open')
+            .removeClass('feed-open');
+    });
+});
