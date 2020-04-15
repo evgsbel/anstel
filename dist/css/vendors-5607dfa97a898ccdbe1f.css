@@ -157,7 +157,7 @@
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url(/img/owl.video.play.png) no-repeat;
+  background: url(../img/owl.video.play.png) no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -1132,4 +1132,4 @@ body.compensate-for-scrollbar {
     }
 }
 
-/*# sourceMappingURL=vendors-9a66b3d48156142cc66b.css.map*/
+/*# sourceMappingURL=vendors-5607dfa97a898ccdbe1f.css.map*/
