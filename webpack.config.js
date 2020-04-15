@@ -4,9 +4,11 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const autoprefixer = require('autoprefixer')
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserWebpackPlugin = require('terser-webpack-plugin')
 const {BundleAnalyzerPlugin} = require('webpack-bundle-analyzer')
+
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
@@ -14,7 +16,8 @@ const isProd = !isDev
 const optimization = () => {
     const config = {
         splitChunks: {
-            chunks: 'all'
+            chunks: 'all',
+            name: 'vendors'
         }
     }
 
@@ -32,8 +35,13 @@ const cssLoaders = extra => {
     const loaders = [
         {
             loader: MiniCssExtractPlugin.loader,
+            options: {
+                hmr: isDev
+            },
+
         },
-        'css-loader'
+        'css-loader',
+        'postcss-loader'
     ]
     if (extra) {
         loaders.push(extra)
@@ -67,6 +75,14 @@ const plugins = () => {
             {
                 from: path.resolve(__dirname, 'src/favicon.ico'),
                 to: path.resolve(__dirname, 'dist'),
+            },
+            {
+                from: path.resolve(__dirname, 'src/fonts'),
+                to: path.resolve(__dirname, 'dist/fonts')
+            },
+            {
+                from: path.resolve(__dirname, 'src/img'),
+                to: path.resolve(__dirname, 'dist/img')
             }
         ]),
         new MiniCssExtractPlugin({
@@ -76,6 +92,13 @@ const plugins = () => {
             $: 'jquery',
             jQuery: 'jquery',
             'window.jQuery': 'jquery'
+        }),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [
+                    autoprefixer()
+                ]
+            }
         }),
     ]
     if (isProd) {
@@ -104,7 +127,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/,
-                use: cssLoaders()
+                use: cssLoaders(),
             },
             {
                 test: /\.s[ac]ss$/,
@@ -115,17 +138,18 @@ module.exports = {
                 use: [{
                     loader: 'file-loader',
                     options: {
-                        name: '../img/[name].[ext]',
+                        name: '/img/[name].[ext]',
                     },
                 }]
             },
             {
                 test: /fonts\/.+\.(woff|woff2|eot|ttf|otf|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader?name=../fonts/[name].[ext]'
+                use: [{
+                    loader: 'file-loader',
+                    options: {
+                        name: '/fonts/[name].[ext]',
                     },
-                ],
+                }]
             },
             {
                 test: /\.js$/,

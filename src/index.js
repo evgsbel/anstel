@@ -4,6 +4,7 @@ import 'owl.carousel';
 import '@fancyapps/fancybox'
 import './sass/libs.sass'
 import './sass/app.sass'
+import './sass/media.sass'
 
 $(() => {
     $(window).on('load', function () {
@@ -20,8 +21,8 @@ $(document).ready(function () {
         margin: 25,
         nav: true,
         navText: [arrow_prev, arrow_next],
-        navClass: ["slider-arrow_prev", "slider-arrow_next"],
-        navContainerClass: 'slider-arrow',
+        navClass: ["slider-arrow slider-arrow_prev", "slider-arrow slider-arrow_next"],
+        navContainerClass: 'slider-arrow__wrp',
         responsive: {
             0: {
                 items: 1
