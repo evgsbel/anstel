@@ -7600,6 +7600,14 @@ b {
     color: #fff; }
   .title_page {
     text-align: left; }
+  .title__line {
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-family: "gt_eesti_pro_displayregular";
+    color: #342B2B;
+    margin: 0 40px 30px; }
+  .title_sub {
+    font-family: "gt_eesti_pro_displayregular"; }
 
 button {
   background-color: transparent; }
@@ -8123,7 +8131,8 @@ button {
   padding: 20px 0; }
   .sertificate__item {
     transition: .3s all ease-in-out;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    margin: 10px 0; }
     .sertificate__item:hover {
       transform: translateY(-8px); }
   .sertificate__btn {
@@ -8421,6 +8430,140 @@ button {
       color: #494D77;
       text-transform: uppercase; }
 
+.team {
+  background-image: url(../img/team-bg.png);
+  background-size: cover;
+  padding: 20px 0; }
+  .team__department {
+    flex-wrap: wrap;
+    margin-bottom: 45px; }
+  .team__item {
+    max-width: 23%; }
+  .team__item:not(:last-child) {
+    margin-right: 30px; }
+  .team__department-title {
+    font-size: 35px;
+    font-family: "gt_eesti_pro_displaybold";
+    margin-bottom: 35px; }
+  .team__name {
+    font-size: 30px;
+    font-family: "gt_eesti_pro_displaymedium";
+    line-height: 1;
+    margin: 20px 0; }
+  .team__position {
+    font-family: "gt_eesti_pro_displayregular";
+    font-size: 20px; }
+
+.about-service {
+  background-image: url(../img/team-bg.png);
+  background-size: cover;
+  padding: 20px 0; }
+  .about-service__item {
+    margin-bottom: 30px; }
+  .about-service__title {
+    font-size: "gt_eesti_pro_displaybold", serif;
+    font-size: 40px;
+    margin-bottom: 45px; }
+  .about-service__img {
+    margin-right: 30px; }
+  .about-service__name {
+    font-size: 20px;
+    font-family: "gt_eesti_pro_displayregular", serif; }
+
+.contracts {
+  padding: 20px 0; }
+  .contracts__overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #5E6398;
+    opacity: 0;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .3s all ease-in-out; }
+  .contracts__link {
+    position: relative;
+    display: block; }
+    .contracts__link:hover .contracts__overlay {
+      opacity: .7; }
+  .contracts__size {
+    color: #B3B3B3;
+    line-height: 25px;
+    margin-top: 5px; }
+  .contracts__name {
+    font-family: "gt_eesti_pro_displaybold", serif;
+    margin-bottom: 5px; }
+  .contracts__download {
+    font-size: 14px;
+    text-decoration: underline;
+    font-family: "gt_eesti_pro_displaylight", serif; }
+
+.sertificate-list__item {
+  margin-bottom: 50px; }
+
+.sertificate-list__overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5E6398;
+  opacity: 0;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: .3s all ease-in-out; }
+
+.sertificate-list__link {
+  position: relative;
+  display: block; }
+  .sertificate-list__link:hover .sertificate-list__overlay {
+    opacity: .7; }
+
+.sertificate-list__name {
+  font-size: 30px;
+  font-family: "gt_eesti_pro_displaybold", serif;
+  margin-top: 20px;
+  margin-bottom: 15px; }
+
+.sertificate-list__description {
+  font-size: 20px; }
+
+.pagination {
+  margin: 50px 0; }
+  .pagination__arrow {
+    stroke: #5E6398;
+    transition: .3s all ease-in-out;
+    cursor: pointer; }
+    .pagination__arrow:hover {
+      stroke: #342B2B; }
+  .pagination__numbers {
+    margin: 0 40px;
+    display: flex; }
+  .pagination__number {
+    color: #000;
+    font-size: 16px;
+    width: 50px;
+    height: 50px;
+    transition: .3s all ease-in-out;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    text-align: center; }
+    .pagination__number_active, .pagination__number:hover {
+      background: #5E6398;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+      color: #fff; }
+
+.news-list__item {
+  margin-bottom: 30px; }
+
 @media (max-width: 1199.98px) {
   .layout-contacts__item_opacity {
     opacity: 1; }
@@ -8559,4 +8702,4 @@ button {
     flex-wrap: wrap; } }
 
 
-/*# sourceMappingURL=app.5ad5d57dc15e2cdc3710.css.map*/
+/*# sourceMappingURL=app.ddb298351b2f082bd25a.css.map*/
