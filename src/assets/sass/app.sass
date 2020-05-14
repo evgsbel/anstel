@@ -336,8 +336,14 @@ button
     margin: 0
     list-style: none
     width: 100%
-  &__link
+  &__item
+    position: relative
     color: #fff
+    &:hover
+      background: #5E6398
+      color: #fff
+      position: relative
+  &__link
     font-size: 18px
     font-family: 'helveticaneuecyrroman', serif
     font-weight: bold
@@ -345,11 +351,44 @@ button
     padding: 20px 15px
     transition: .3s all ease-in-out
     display: block
-    &:hover
-      background: #5E6398
-      color: #fff
-      z-index: 1
+  &__sub
+    position: absolute
+    list-style: none
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.1)
+    z-index: -15
+    width: 350px
+    font-size: 18px
+    padding: 27px 0
+    font-family: 'helveticaneuecyrroman', serif
+    transition: .3s all ease-out
+    opacity: 0
+    display: block
+    &.is-open
+      transition: .3s all ease-in
+      opacity: 1
+      z-index: 15
+    &-item
       position: relative
+    &_level1
+      color: #342B2B
+      background-color: #F4F4F4
+      top: 68px
+      &-item:hover
+        background-color: #5E6398
+        color: #fff
+    &_level2
+      background-color: #5E6398
+      top: 0
+      right: -99%
+      color: #fff
+      text-decoration: underline
+      &-item:hover
+        background-color: #fff
+        color: #342B2B
+    &-link
+      padding: 12px 0 12px 30px
+      display: block
+
 .hamburger
   display: none
 // banner
@@ -916,8 +955,7 @@ button
   &__item
     margin-right: 26px
   &__link
-    color: #5E6398
-    text-decoration: underline
+    color: #000
     position: relative
     &:before
       content: ''
@@ -929,9 +967,18 @@ button
       position: absolute
       top: 20%
       right: -20px
+    &:hover
+      text-decoration: underline
+    &_home
+      color: #5E6398
+      border-bottom: 1px solid $purple
+      &:hover
+        text-decoration: none
+        color: $purple
     &_active
       color: #000
       text-decoration: none
+      cursor: text
       &:before
         content: none
 .pagetitle
@@ -1177,11 +1224,13 @@ button
   &__item
     margin-bottom: 35px
     display: block
+    width: 100%
+    padding-left: 40px
+.design-list-item
     background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.9982 2.89488C15.4944 2.04454 13.7569 1.5592 11.9061 1.5592C6.18432 1.5592 1.5459 6.19763 1.5459 11.9194C1.5459 17.6412 6.18432 22.2796 11.9061 22.2796C17.6279 22.2796 22.2663 17.6412 22.2663 11.9194C22.2663 11.2935 22.2108 10.6806 22.1045 10.0853' stroke='%23494D77' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.90332 11.2804L11.0304 15.4075L23.3432 3.09473' stroke='%23342B2B' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
     background-position: 0 0
     background-repeat: no-repeat
-    width: 100%
-    padding-left: 40px
+
 
 .building-expertise
   padding: 20px 0
@@ -1290,4 +1339,133 @@ button
     
 
 
-    
+// equipment list
+.equipment-list
+  margin: 50px 0
+  &__item
+    margin-bottom: 40px
+  &__name
+    color: #342B2B
+    font-size: 35px
+    font-family: $bold, serif
+    margin-bottom: 0.41em
+  &__wrapper
+    justify-content: space-between
+  &__img
+    background-color: #fff
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 100%
+  &__info
+    &-title
+      color: #342B2B
+      font-size: 31px
+      font-family: $medium, serif
+      margin-bottom: 1em
+      line-height: 1
+    &-list
+      list-style: none
+      margin-bottom: 15px
+      padding: 0
+      &__item
+        font-size: 20px
+        color: #000
+        margin-bottom: 0.4em
+        font-family: $light, serif
+        padding-left: 40px
+    &-description
+      font-family: $light, serif
+      margin-bottom: 1.37em
+      max-height: 75px
+      overflow: hidden
+      transition: .3s all ease-out
+      &.is-open
+        transition: .3s all ease-in
+        max-height: 100vh
+    &-btn
+      color: #000
+      font-size: 20px
+      font-family: $light, serif
+      border: 0
+      padding: 0
+      line-height: 1
+      background-color: transparent
+      border-bottom: 1px solid #5E6398
+      display: inline-block
+      position: relative
+      transition: .3s all ease-in-out
+      &:focus, &:active
+        outline: none
+      &:after
+        content: ''
+        display: inline-block
+        width: 17px
+        height: 11px
+        background-image: url("data:image/svg+xml,%3Csvg width='17' height='11' viewBox='0 0 17 11' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.92871 1.54492L8.84766 8.46362L15.7664 1.54492' stroke='%235E6398' stroke-width='3'/%3E%3C/svg%3E%0A")
+        position: absolute
+        right: -25px
+        top: 5px
+        transition: .3s all ease-in-out
+      &.is-active
+        color: #5E6398
+        &:after
+          transform: rotate(180deg)
+
+
+// news navigation
+
+.news-navigation
+  margin: 30px 0
+  &__link
+    font-size: 20px
+    display: flex
+    align-items: center
+    transition: .3s all ease-in-out
+    flex-wrap: wrap
+    svg
+      stroke: #342B2B
+      transition: .3s all ease-in-out
+    &_back
+      span
+        display: block
+        margin-left: 20px
+    &_next
+      justify-content: flex-end
+      span
+        display: block
+        margin-right: 20px
+    &-title
+      font-family: $bold, serif
+      font-size: 30px
+      margin-top: 12px
+    &:hover
+      color: #5E6398
+      svg
+        stroke: #5E6398
+
+.news-content
+  color: #342B2B
+  &__img
+    float: left
+    margin-right: 30px
+  &__date
+    font-size: 20px
+    margin-bottom: 0.2em
+  &__title
+    font-size: 40px
+    margin-bottom: 0.17em
+    font-family: $bold, serif
+  p
+    margin-bottom: 1.25em
+    font-size: 20px
+    font-family: $light, serif
+    line-height: 25px
+
+
+
+
+
+
+
+

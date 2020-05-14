@@ -59,3 +59,19 @@ $(() => {
             .removeClass('feed-open');
     });
 });
+
+$(() => {
+    $('.js-open-equipment-descr').on('click', function openEquipmentDescr() {
+        $(this).toggleClass('is-active')
+        $(this).text(function (i, text) {
+            return text === 'Раскрыть описание' ? 'Скрыть описание' : 'Раскрыть описание';
+        })
+        $(this).parent().find('.js-equipment-hide').toggleClass('is-open')
+    })
+})
+
+$(() => {
+    $('.js-sub-item').hover(function() {
+        $(this).children('ul').toggleClass('is-open')
+    })
+})
