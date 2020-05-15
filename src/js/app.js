@@ -49,6 +49,29 @@ $(document).ready(function () {
             }
         }
     })
+    // partners
+    $('.js-trust-slider').owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        navText: [arrow_prev, arrow_next],
+        navClass: ["slider-arrow_prev", "slider-arrow_next"],
+        navContainerClass: 'slider-arrow',
+        responsive: {
+            0: {
+                items: 1
+            },
+            400: {
+                items: 2
+            },
+            800: {
+                items: 2
+            },
+            1000: {
+                items: 4
+            }
+        }
+    })
 })
 
 $(() => {
