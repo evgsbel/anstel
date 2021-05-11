@@ -46,7 +46,7 @@
     "@babel/polyfill": "^7.8.7",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "normalize-scss": "^7.0.1",
     "normalize.css": "^8.0.1",
     "owl.carousel": "^2.3.4",
